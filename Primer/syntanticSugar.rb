@@ -44,3 +44,16 @@ puts 'i am in lowercase'.upcase #=> 'I AM IN LOWERCASE'
 "ruby"<<"l"
 
 "I should look into your problem when I get time".sub('I','We')
+
+
+"""
+The method above only replaced the first occurrence of the term we were looking for.
+In order to replace all occurrences we can use a method called gsub which has a global scope
+
+"""
+"I should look into your problem when I get time".gsub('I','We')
+
+
+'RubyMonk'.gsub(/[aeiou]/,'1')
+
+'RubyMonk Is Pretty Brilliant'.gsub(/[RMIPB]/,'0')
