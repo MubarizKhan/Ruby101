@@ -40,4 +40,6 @@ digits = Array(0..9)
 nums = digits.at(6)
 puts "#{digits}, #{nums}"
 
+puts "#{self}"
+
 

@@ -54,6 +54,30 @@ In order to replace all occurrences we can use a method called gsub which has a 
 "I should look into your problem when I get time".gsub('I','We')
 
 
+"""
+If you haven't come across the term Regular Expression before, now is the time for introductions.
+Regular Expressions or RegExs are a concise and flexible means for matching particular characters,
+words, or patterns of characters. In Ruby you specify a RegEx by putting it between a
+pair of forward slashes (/).
+Now let's look at an example that replaces all the vowels with the number 1:
+
+"""
+
 'RubyMonk'.gsub(/[aeiou]/,'1')
 
 'RubyMonk Is Pretty Brilliant'.gsub(/[RMIPB]/,'0')
+
+"""
+Find a substring using RegEx
+
+We covered the art of finding the position of a substring in a previous lesson,
+but how do we handle those cases where we don't know exactly what we are looking for?
+That's where Regular Expressions come in handy. The String#match method converts a pattern to a Regexp
+(if it isn‘t already one), and then invokes its match method on the target String object.
+Here is how you find the characters from a String which are next to a whitespace:
+"""
+
+'RubyMonk Is Pretty Brilliant'.match(/ ./, 9)
+
+
+
