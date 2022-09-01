@@ -28,3 +28,47 @@ As with class methods, you call a module method by preceding its name with the m
  about being stepped on by other methods and constants.
  """
 
+ $LOAD_PATH << '.' #This is telling ruby to look into that file we're looking for is in this directory.
+
+ require 'addModule.rb'
+ require 'weekModule'
+
+ val = Addition.sum(Addition::A,Addition::B)
+ puts "This is the val from module page#{val}"
+
+
+ """
+
+      Ruby include Statement
+
+You can embed a module in a class. To embed a module in a class, you use the include statement in the class −
+      Syntax
+      include modulename
+      If a module is defined in a separate file, then it is required to include that file using require statement before embedding module in a class.
+
+"""
+
+class Decade
+  include Week
+  def firstDayofWeek
+    puts Week::FIRST_DAY
+  end
+
+  def weeksInDecade
+    weeksInYear = Week::weeksInYear
+    puts "These are the number of weeks in a decade#{weeksInYear * 10}"
+  end
+
+  def MIDecade
+    monthsInDecade = Week::weeksInMonth * 10
+    puts "These are the number of months in a decade#{monthsInDecade}"
+  end
+end
+
+  d1 = Decade.new
+  puts Week::FIRST_DAY
+  Week.weeksInMonth
+  Week.weeksInYear
+  d1.MIDecade
+  d1.weeksInDecade
+
