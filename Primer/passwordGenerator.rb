@@ -49,14 +49,43 @@ class RPG
 
   #
   # while alphaCounter, DigitCounter & specialcharcounter < 7'
-  #
+  # while alphaCounter and DigitCounter and specialcharcounter < 7
   #
 
   def generatePW
     pw = ''
-    for i in 0..10
+    alphaCounter = 1
+    digitCounter= 1
+    specialcharcounter = 1
+
+    while alphaCounter and digitCounter and specialcharcounter < 7
+
       a = Password_data.sample
-      pw = pw.concat(a.sample)
+
+      if a == Password_data[0]
+        puts "a is the zeroth array"
+        specialcharcounter += 1
+        pw = pw.concat(a.sample)
+      end
+
+      if a == Password_data[1]
+          # puts "a is the FIRST array"
+          alphaCounter += 1
+          pw = pw.concat(a.sample)
+      end
+
+      if a == Password_data[2]
+            # puts "a is the second array"
+            alphaCounter += 1
+            pw = pw.concat(a.sample)
+      end
+
+      if a == Password_data[3]
+        # puts "a is the FIRST array"
+        digitCounter += 1
+        pw = pw.concat(a.sample)
+      end
+      puts "#{alphaCounter}, #{specialcharcounter}, #{digitCounter}, #{pw}"
     end
     pw
   end
