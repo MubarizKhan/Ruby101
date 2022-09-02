@@ -118,7 +118,7 @@ class RPG
   def generation(filename="dummy.csv")
     # table = gen_table
     ctr = 0
-    for i in 0..10
+    for i in 0..100
       pw = [generatePW]
       table = gen_table
 
