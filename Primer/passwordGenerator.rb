@@ -60,32 +60,37 @@ class RPG
 
     while alphaCounter and digitCounter and specialcharcounter < 7
 
-      a = Password_data.sample
+      randomlySelectedArray = Password_data.sample
 
-      if a == Password_data[0]
-        puts "a is the zeroth array"
+      if randomlySelectedArray == Password_data[0]
+        puts "a is the zeroth index, which is Specialchars list"
         specialcharcounter += 1
-        pw = pw.concat(a.sample)
+        pw = pw.concat(randomlySelectedArray.sample)
       end
 
-      if a == Password_data[1]
-          # puts "a is the FIRST array"
+      if randomlySelectedArray == Password_data[1]
+          puts "a is the array, at the first index, cap Alphabets"
           alphaCounter += 1
-          pw = pw.concat(a.sample)
+          pw = pw.concat(randomlySelectedArray.sample)
       end
 
-      if a == Password_data[2]
-            # puts "a is the second array"
+      if randomlySelectedArray == Password_data[2]
+            puts "a is the array, at the end index, Small Alphabets"
             alphaCounter += 1
-            pw = pw.concat(a.sample)
+            pw = pw.concat(randomlySelectedArray.sample)
       end
 
-      if a == Password_data[3]
+      if randomlySelectedArray == Password_data[3]
         # puts "a is the FIRST array"
+        puts "a is the second array, a is the third index, which is digits list"
         digitCounter += 1
-        pw = pw.concat(a.sample)
+        pw = pw.concat(randomlySelectedArray.sample)
+        # puts "#{pw}, selected"
       end
-      puts "#{alphaCounter}, #{specialcharcounter}, #{digitCounter}, #{pw}"
+      puts "#{alphaCounter}, #{specialcharcounter}, #{digitCounter},"
+      puts "{pw}
+
+
     end
     pw
   end
@@ -107,7 +112,6 @@ class RPG
   def appendToCsv(list)
     CSV.open("dummy.csv", "ab") do |csv|
       csv <<  list
-      # puts "#{csv}"
     end
     table = CSV.parse(File.read("dummy.csv"))
     puts "#{table}"
